@@ -4,15 +4,15 @@
           {
               "nombre": "Bicicleta",
               "venta": true,
-              "precio": 230.15, 
-              "foto": "bici.jpg", 
+              "precio": 10, 
+              "foto": "bicicleta.jpg", 
               "tags": ["lifestyle", "motor"]
            },
            { 
                "nombre": "Iphone 3gs",
                "venta": false,
-               "precio": 30,
-               "foto": "iphone.png",
+               "precio": 20,
+               "foto": "iphone-4.jpg",
                "tags": ["lifestyle", "mobile"]
             },
             { 
@@ -25,7 +25,7 @@
             { 
                "nombre": "Iphone 7",
                "venta": false,
-               "precio": 700,
+               "precio": 55,
                "foto": "iphone.png",
                "tags": ["lifestyle", "mobile"]
             }

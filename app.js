@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 require('./lib/connectMongoose');
 require('./models/Anuncio');
 require('./models/Usuario');
+var CustomError =  require('./models/CustomError');
 
 var app = express();
 
@@ -29,26 +30,43 @@ app.use('/'              , require('./routes/index'));
 app.use('/apiv1/anuncios', require('./routes/apiv1/anuncios'));
 app.use('/apiv1/usuarios', require('./routes/apiv1/usuarios'));
 
-// catch 404 and forward to error handler
+//Errores
+
+// 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
 });
 
-// error handler
-app.use(function(err, req, res, next) {
-  res.status(err.status || 500);
+// No una peticion a la api
 
-  if(isApi(req)) {
-    res.json({success: false, error: err});
+app.use(function(err, req, res, next) {
+  if(!isApi(req)) {
+   let lang = req.query.lang;
+   let  error = new CustomError('IS_NOT_API_REQUEST',401,lang);
+    next(error);
     return;
   }
+  next(err);
+});
+
+//Errores de personalizados
+app.use(function(err, req, res, next) {
+   console.log(err.status);
+    res.json({success: false, error: err.message, status: err.status});
+    return;
+});
+
+// error handler
+app.use(function(err, req, res, next) {
+    //console.log(err);
+
   // set locals, only providing error in development
-  //res.locals.message = err.message;
-  //res.locals.error = req.app.get('env') === 'development' ? err : {};
-  // render the error page
-  res.render('error');
+  // res.locals.error = req.app.get('env') === 'development' ? err : {};
+  //  res.locals.message = err.message;
+  //  render the error page
+  //  res.render('error');
 });
 
 function isApi(req) {

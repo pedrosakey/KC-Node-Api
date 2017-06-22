@@ -7,6 +7,7 @@ var passwordHash = require('password-hash');
 
 /*GET /apiv1/usuarios */
 router.post('/', function(req, res, next) {
+    console.log(req.body.nombre);
     var passHash = passwordHash.generate(req.body.clave);
     var usuario = new Usuario({ nombre: req.body.nombre,
                                 email: req.body.email,
