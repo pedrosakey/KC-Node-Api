@@ -1,6 +1,8 @@
 # NodePOP API
 
-API para la venta de articulos de segunda mano
+API para la venta de articulos de segunda mano.
+**Update**
+This API is no longer available.
 
 ## URL de despliegue
 
