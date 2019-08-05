@@ -1,4 +1,6 @@
-# NodePOP API
+# Node API
+
+![version](https://img.shields.io/badge/javascript-Node-green.svg?maxAge=2592000)
 
 API para la venta de articulos de segunda mano.
 **Update**
