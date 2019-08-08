@@ -2,18 +2,24 @@
 
 ![version](https://img.shields.io/badge/javascript-Node-green.svg?maxAge=2592000)
 
-API para la venta de articulos de segunda mano.
-**Update**
-This API is no longer available.
+Second hand API. Testing purpose
 
-## URL de despliegue
-
-knowerflow.com
-
-ip: http://13.58.65.107/
+## Quick Start
+```
+docker-compose up
+```
 
 
-*Ejemplo*
+## Populate
+
+Para cargar los datos de los anuncios y usuario podemos ejecutar el script 
+
+```
+npm run installDB
+```
+
+
+## Request example 
 
 - Devolver anuncios (Basic Auth requerida)
 
@@ -40,25 +46,7 @@ email: [email valido]
 
 
 
-
-## Archivos estaticos
-
-www.knowerflow.com/images/anuncios/iphone-4.jpg
-
-www.knowerflow.com/images/anuncios/iphone-7.jpg
-
-www.knowerflow.com/images/anuncios/Bicicleta.jpg
-
-
-## Instalar paquetes
-
-Para descargar los paquetes correspondientes ejecutar el comando
-
-```
-npm install
-```
-
-## Conexión con la base de datos
+## Data base connection
 
 Defina la conexión con la base de datos en el archivo:
 ```
@@ -71,23 +59,9 @@ const conn = mongoose.connection;
 const dbUri = 'mongodb://[ip/domain:port]/nodepopdb';
 ```
 
-## Cargar datos (Populate)
-
-Para cargar los datos de los anuncios y usuario podemos ejecutar el script 
-
-```
-npm run installDB
-```
-
-## Arrancar la aplicacion
-
-Para arrancar la aplicación usa el comando 
-```
-npm start
-```
 
 
-## Registro
+## Register
 
 POST:
 nombre: [nombre]
