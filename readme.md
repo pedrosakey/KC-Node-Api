@@ -21,34 +21,31 @@ npm run installDB
 
 ## Request example 
 
-- Devolver anuncios (Basic Auth requerida)
+**GET**
 
-GET
-
-knowerflow.com/apiv1/anuncios
+localhost:3000/apiv1/anuncios
 
 Usuario prueba ya creado (puedes crear tu propio usuario) 
 Tomas / 1234
 
-- Crear usuario
+- Create user
 
-POST
+**POST**
 
-knowerflow.com/apiv1/usuarios
+localhost:3000/apiv1/usuarios
 
-PARAMETROS EN EL BODY
+_Body params_
 
-nombre: [nombre no duplicado]
+nombre: [no duplicated]
 
-clave: [clave]
+clave: [pass]
 
-email: [email valido]
+email: [valid email]
 
 
 
 ## Data base connection
 
-Defina la conexión con la base de datos en el archivo:
 ```
 /lib/connectMongoose.js
 ```
@@ -63,12 +60,12 @@ const dbUri = 'mongodb://[ip/domain:port]/nodepopdb';
 
 ## Register
 
-POST:
-nombre: [nombre]
-clave: [clave]
+**POST**
+nombre: [name]
+clave: [pass]
 email: [email valido]
 
-### Errores
+### Errors
 
 Usuario no puede estar vacio 
 
@@ -91,11 +88,10 @@ http://localhost:3000/apiv1/usuarios
 http://localhost:3000/apiv1/anuncios/tagslista
 ```
 
-## Peticion de anuncios
+## Advertisment request
 
 GET:
 
-Ejemplo petición genérica devuelva todos los anuncios, requiere BasicAuth
 
 ```
 http://localhost:3000/apiv1/anuncios
